@@ -10,6 +10,6 @@ This project focuses on building programs and prompts to automate Google Tag Man
 
 ## Architecture
 
-To ensure accessibility for as many users as possible, the project is implemented using standard programming languages and libraries wherever possible.
+To ensure portability and ease of setup, this project is implemented using **only the Python standard library**. No external dependencies (such as `requests` or `google-auth`) are required.
 
-- **Programming Language**: Python
+- **Programming Language**: Python 3.x (Standard Library only)
