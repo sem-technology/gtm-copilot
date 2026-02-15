@@ -106,6 +106,13 @@ class GTMClient:
             return containers + self.list_containers(account_path, data["nextPageToken"])
         return containers
 
+    def get_container(self, container_path: str) -> Dict:
+        """
+        Gets a specific container.
+        container_path: e.g., 'accounts/12345/containers/67890'
+        """
+        return self._get(container_path)
+
     def list_workspaces(self, container_path: str, page_token: Optional[str] = None) -> List[Dict]:
         """
         Lists all workspaces in a specific container.

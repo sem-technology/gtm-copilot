@@ -54,8 +54,15 @@ GTM_REFRESH_TOKEN=your_refresh_token
 ## Workflow Overview
 
 ### 1. Exporting GTM State
-To get the latest state of a GTM workspace, use `bin/export.py`.
+To get the latest state of a GTM workspace, use `bin/export.py`. You can provide individual IDs or simply the **Workspace URL**.
 
+**Option A: Using Workspace URL (Recommended)**
+```bash
+python bin/export.py --url https://tagmanager.google.com/#/container/accounts/[ACCOUNT_ID]/containers/[CONTAINER_ID]/workspaces/[WORKSPACE_ID]
+```
+*Note: This will automatically create and export to `tmp/GTM-XXXXXX/` based on the container's Public ID.*
+
+**Option B: Using Individual IDs**
 ```bash
 python bin/export.py --account [ACCOUNT_ID] --container [CONTAINER_ID] --workspace [WORKSPACE_ID] --output tmp/GTM-MY_WORKDIR
 ```
@@ -83,6 +90,13 @@ The `import.py` script supports **name-based references**. Instead of hunting fo
 ### 3. Importing Changes
 To sync your local changes to GTM, use `bin/import.py`.
 
+**Option A: Using Workspace URL (Recommended)**
+```bash
+python bin/import.py --url https://tagmanager.google.com/#/container/accounts/[ACCOUNT_ID]/containers/[CONTAINER_ID]/workspaces/[WORKSPACE_ID]
+```
+*Note: This will automatically look for JSON files in `tmp/GTM-XXXXXX/` based on the container's Public ID.*
+
+**Option B: Using Individual IDs**
 ```bash
 python bin/import.py --account [ACCOUNT_ID] --container [CONTAINER_ID] --workspace [WORKSPACE_ID] --directory [DIR_PATH]
 ```

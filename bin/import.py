@@ -10,6 +10,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 's
 try:
     from gtm_client import GTMClient
     from helpers.env_loader import load_env_file
+    from helpers.gtm_utils import parse_gtm_workspace_url
 except ImportError as e:
     print(f"Error: Could not import necessary modules: {e}")
     sys.exit(1)
@@ -156,23 +157,57 @@ class GTMDependencyResolver:
 
 def main():
     parser = argparse.ArgumentParser(description="Import GTM items with content-based skipping and local updates.")
-    parser.add_argument("--account", required=True, help="GTM Account ID")
-    parser.add_argument("--container", required=True, help="GTM Container ID")
-    parser.add_argument("--workspace", required=True, help="GTM Workspace ID")
-    parser.add_argument("--directory", required=True, help="Directory containing JSON files")
+    parser.add_argument("--url", help="GTM Workspace URL")
+    parser.add_argument("--account", help="GTM Account ID")
+    parser.add_argument("--container", help="GTM Container ID")
+    parser.add_argument("--workspace", help="GTM Workspace ID")
+    parser.add_argument("--directory", help="Directory containing JSON files")
     
     args = parser.parse_args()
     load_env_file()
     
     client = GTMClient()
-    workspace_path = f"accounts/{args.account}/containers/{args.container}/workspaces/{args.workspace}"
+    
+    account_id = args.account
+    container_id = args.container
+    workspace_id = args.workspace
+    directory = args.directory
+
+    if args.url:
+        parsed = parse_gtm_workspace_url(args.url)
+        if not parsed:
+            print(f"Error: Could not parse GTM URL: {args.url}")
+            sys.exit(1)
+        account_id = parsed["account_id"]
+        container_id = parsed["container_id"]
+        workspace_id = parsed["workspace_id"]
+
+    if not all([account_id, container_id, workspace_id]):
+        print("Error: Account, Container, and Workspace IDs are required (via --url or individual arguments)")
+        sys.exit(1)
+
+    container_path = f"accounts/{account_id}/containers/{container_id}"
+    workspace_path = f"{container_path}/workspaces/{workspace_id}"
     
     try:
+        # Fetch container info to get Public ID for folder name
+        container_info = client.get_container(container_path)
+        public_id = container_info.get("publicId", f"GTM-{container_id}")
+        
+        if not directory:
+            directory = os.path.join("tmp", public_id)
+
         print(f"Starting import to workspace: {workspace_path}")
-        resolver = GTMDependencyResolver(client, workspace_path, args.directory)
+        print(f"Input directory: {directory}")
+        
+        if not os.path.exists(directory):
+            print(f"Error: Directory not found: {directory}")
+            sys.exit(1)
+
+        resolver = GTMDependencyResolver(client, workspace_path, directory)
 
         # 1. Built-in Variables
-        built_in_vars = load_json(args.directory, "built_in_variables.json")
+        built_in_vars = load_json(directory, "built_in_variables.json")
         if built_in_vars:
             print("Enabling built-in variables...")
             existing_built_ins = resolver.remote_registry["built_in_variables"]
@@ -221,11 +256,13 @@ def main():
 
             # Save the updated list back to the JSON file
             original_list = getattr(resolver, f"{ctype}_list")
-            save_json(args.directory, f"{ctype}.json", original_list)
+            save_json(directory, f"{ctype}.json", original_list)
 
         print("\nImport process completed. Local files updated.")
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print(f"\nAn error occurred: {e}")
         sys.exit(1)
 
