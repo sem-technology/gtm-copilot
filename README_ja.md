@@ -1,4 +1,4 @@
-# AI GTM Developer
+# GTM Copilot
 
 このプロジェクトでは、AIを活用してGoogleタグマネージャー（GTM）の実装作業を自動化するためのプログラムやプロンプトを構築しています。
 
