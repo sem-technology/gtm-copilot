@@ -1,4 +1,4 @@
-# AI GTM Developer
+# GTM Copilot
 
 This project focuses on building programs and prompts to automate Google Tag Manager (GTM) implementation tasks using AI.
 
