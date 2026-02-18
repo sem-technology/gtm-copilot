@@ -1,4 +1,5 @@
 tmp
+artifacts
 
 # Environment variables
 .env
