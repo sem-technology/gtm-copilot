@@ -1,4 +1,4 @@
-# AGENT.md - GTM Development Guide for AI Agents
+# AGENT.md - GTM Copilot Development Guide for AI Agents
 
 This guide explains how to use the GTM development tools in this repository to export, customize, and import Google Tag Manager components.
 
