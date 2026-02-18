@@ -30,7 +30,7 @@ The human user must perform these steps in the [Google Cloud Console](https://co
 Once Client ID/Secret are ready, the Agent should run the following script and guide the human:
 
 ```bash
-python bin/auth.py
+python src/bin/auth.py
 ```
 
 **Guidance for the Agent:**
@@ -54,17 +54,17 @@ GTM_REFRESH_TOKEN=your_refresh_token
 ## Workflow Overview
 
 ### 1. Exporting GTM State
-To get the latest state of a GTM workspace, use `bin/export.py`. You can provide individual IDs or simply the **Workspace URL**.
+To get the latest state of a GTM workspace, use `src/bin/export.py`. You can provide individual IDs or simply the **Workspace URL**.
 
 **Option A: Using Workspace URL (Recommended)**
 ```bash
-python bin/export.py --url https://tagmanager.google.com/#/container/accounts/[ACCOUNT_ID]/containers/[CONTAINER_ID]/workspaces/[WORKSPACE_ID]
+python src/bin/export.py --url https://tagmanager.google.com/#/container/accounts/[ACCOUNT_ID]/containers/[CONTAINER_ID]/workspaces/[WORKSPACE_ID]
 ```
 *Note: This will automatically create and export to `tmp/GTM-XXXXXX/` based on the container's Public ID.*
 
 **Option B: Using Individual IDs**
 ```bash
-python bin/export.py --account [ACCOUNT_ID] --container [CONTAINER_ID] --workspace [WORKSPACE_ID] --output tmp/GTM-MY_WORKDIR
+python src/bin/export.py --account [ACCOUNT_ID] --container [CONTAINER_ID] --workspace [WORKSPACE_ID] --output tmp/GTM-MY_WORKDIR
 ```
 
 This creates four JSON files: `tags.json`, `triggers.json`, `variables.json`, and `built_in_variables.json`.
@@ -92,7 +92,7 @@ To sync your local changes to GTM, use `bin/import.py`.
 
 **Option A: Using Workspace URL (Recommended)**
 ```bash
-python bin/import.py --url https://tagmanager.google.com/#/container/accounts/[ACCOUNT_ID]/containers/[CONTAINER_ID]/workspaces/[WORKSPACE_ID]
+python src/bin/import.py --url https://tagmanager.google.com/#/container/accounts/[ACCOUNT_ID]/containers/[CONTAINER_ID]/workspaces/[WORKSPACE_ID]
 ```
 *Note: This will automatically look for JSON files in `tmp/GTM-XXXXXX/` based on the container's Public ID.*
 

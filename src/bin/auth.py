@@ -1,21 +1,14 @@
 import sys
 import os
 
-# Add src directory to path to import authentication
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+# Add parent directory to path to import local modules
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 try:
     from authentication import get_authorization_url, exchange_code_for_tokens
+    from helpers.env_loader import load_env_file
 except ImportError as e:
-    print(f"Error: Could not import 'authentication' module: {e}")
-    sys.exit(1)
-
-# Add helpers to path for env_loader
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'helpers')))
-try:
-    from env_loader import load_env_file
-except ImportError as e:
-    print(f"Error: Could not import 'env_loader' module: {e}")
+    print(f"Error: Could not import necessary modules: {e}")
     sys.exit(1)
 
 def main():
