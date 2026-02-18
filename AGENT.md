@@ -98,7 +98,7 @@ python src/bin/import.py --url https://tagmanager.google.com/#/container/account
 
 **Option B: Using Individual IDs**
 ```bash
-python bin/import.py --account [ACCOUNT_ID] --container [CONTAINER_ID] --workspace [WORKSPACE_ID] --directory [DIR_PATH]
+python src/bin/import.py --account [ACCOUNT_ID] --container [CONTAINER_ID] --workspace [WORKSPACE_ID] --directory [DIR_PATH]
 ```
 
 #### Smart Synchronization Features
@@ -112,5 +112,5 @@ python bin/import.py --account [ACCOUNT_ID] --container [CONTAINER_ID] --workspa
 
 ### 4. Best Practices for Agents
 - **Always Export First**: Before making changes, export the current state to a temporary directory to ensure you are working on the latest version.
-- **Verify after Import**: After running `import.py`, inspect the local JSON files to confirm that names have been replaced by numeric IDs.
+- **Verify after Import**: After running `src/bin/import.py`, inspect the local JSON files to confirm that names have been replaced by numeric IDs.
 - **Avoid Manual Metadata Edits**: Don't manually edit IDs or fingerprints unless you specifically want to force/manipulate sync behavior. Let the script handle it.
