@@ -1,0 +1,157 @@
+[
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/triggers/5",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "triggerId": "5",
+    "name": "Ecommerce - View Item",
+    "type": "customEvent",
+    "customEventFilter": [
+      {
+        "type": "equals",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "view_item"
+          }
+        ]
+      }
+    ],
+    "fingerprint": "1771406748002",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/triggers/5?apiLink=trigger"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/triggers/9",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "triggerId": "9",
+    "name": "DOM Ready - Blog Articles",
+    "type": "domReady",
+    "filter": [
+      {
+        "type": "startsWith",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{Page Path}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "/blogs/articles/"
+          }
+        ]
+      }
+    ],
+    "fingerprint": "1771406863892",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/triggers/9?apiLink=trigger"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/triggers/10",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "triggerId": "10",
+    "name": "Window Loaded - Contact Thanks",
+    "type": "windowLoaded",
+    "filter": [
+      {
+        "type": "matchRegex",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{Page Path}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "^/contacts/thanks.*"
+          }
+        ]
+      }
+    ],
+    "fingerprint": "1771406902793",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/triggers/10?apiLink=trigger"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/triggers/11",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "triggerId": "11",
+    "name": "Ecommerce - Purchase",
+    "type": "customEvent",
+    "customEventFilter": [
+      {
+        "type": "equals",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "purchase"
+          }
+        ]
+      }
+    ],
+    "fingerprint": "1771406924688",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/triggers/11?apiLink=trigger"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/triggers/21",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "triggerId": "21",
+    "name": "Link Click - Navigation",
+    "type": "linkClick",
+    "filter": [
+      {
+        "type": "cssSelector",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{Click Element}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "nav a"
+          }
+        ]
+      }
+    ],
+    "waitForTags": {
+      "type": "boolean",
+      "value": "false"
+    },
+    "checkValidation": {
+      "type": "boolean",
+      "value": "false"
+    },
+    "waitForTagsTimeout": {
+      "type": "template",
+      "value": "2000"
+    },
+    "uniqueTriggerId": {
+      "type": "template"
+    },
+    "fingerprint": "1771407510686",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/triggers/21?apiLink=trigger"
+  }
+]

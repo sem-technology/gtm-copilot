@@ -1,0 +1,352 @@
+[
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/4",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "4",
+    "name": "GA4 - Measurement ID",
+    "type": "c",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "value",
+        "value": "G-ABCDEFG"
+      }
+    ],
+    "fingerprint": "1771406686656",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/4?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/7",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "7",
+    "name": "User ID",
+    "type": "v",
+    "parameter": [
+      {
+        "type": "integer",
+        "key": "dataLayerVersion",
+        "value": "2"
+      },
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "name",
+        "value": "user_id"
+      }
+    ],
+    "fingerprint": "1771406773190",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/7?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/8",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "8",
+    "name": "GA4 Params",
+    "type": "gtcs",
+    "parameter": [
+      {
+        "type": "list",
+        "key": "configSettingsTable",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "parameter",
+                "value": "user_id"
+              },
+              {
+                "type": "template",
+                "key": "parameterValue",
+                "value": "{{User ID}}"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fingerprint": "1771406815207",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/8?apiLink=variable"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/13",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "13",
+    "name": "Ecommerce - Purchase Revenue",
+    "type": "v",
+    "parameter": [
+      {
+        "type": "integer",
+        "key": "dataLayerVersion",
+        "value": "2"
+      },
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "name",
+        "value": "ecommerce.value"
+      }
+    ],
+    "fingerprint": "1771407051317",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/13?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/14",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "14",
+    "name": "Ecommerce - Transaction ID",
+    "type": "v",
+    "parameter": [
+      {
+        "type": "integer",
+        "key": "dataLayerVersion",
+        "value": "2"
+      },
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "name",
+        "value": "ecommerce.transaction_id"
+      }
+    ],
+    "fingerprint": "1771407078153",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/14?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/15",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "15",
+    "name": "Regexp Table Example",
+    "type": "remm",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "input",
+        "value": "{{Click URL}}"
+      },
+      {
+        "type": "boolean",
+        "key": "fullMatch",
+        "value": "true"
+      },
+      {
+        "type": "boolean",
+        "key": "replaceAfterMatch",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "defaultValue",
+        "value": "Unknown Link"
+      },
+      {
+        "type": "boolean",
+        "key": "ignoreCase",
+        "value": "true"
+      },
+      {
+        "type": "list",
+        "key": "map",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "key",
+                "value": "^https://x.com.*"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "X Link"
+              }
+            ]
+          },
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "key",
+                "value": "^https://facebook.com"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "Facebook Link"
+              }
+            ]
+          },
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "key",
+                "value": "^https://youtube.com"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "YouTube Link"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fingerprint": "1771407283820",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/15?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/16",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "16",
+    "name": "DOM Element Example",
+    "type": "d",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "elementSelector",
+        "value": "h3"
+      },
+      {
+        "type": "template",
+        "key": "selectorType",
+        "value": "CSS"
+      }
+    ],
+    "fingerprint": "1771407324925",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/16?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/17",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "17",
+    "name": "JavaScript Vars Example",
+    "type": "j",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "name",
+        "value": "navigator.user_agent"
+      }
+    ],
+    "fingerprint": "1771407351751",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/17?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/18",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "18",
+    "name": "Custom JavaScript Example",
+    "type": "jsm",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "javascript",
+        "value": "function () {\n  return document.title;\n}"
+      }
+    ],
+    "fingerprint": "1771407381629",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/18?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/19",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "19",
+    "name": "1st Party Cookie Example",
+    "type": "k",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "decodeCookie",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "name",
+        "value": "_ga"
+      }
+    ],
+    "fingerprint": "1771407404524",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/19?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/variables/20",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "variableId": "20",
+    "name": "URL Vars Example",
+    "type": "u",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "stripWww",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "component",
+        "value": "HOST"
+      },
+      {
+        "type": "template",
+        "key": "customUrlSource",
+        "value": "{{Click URL}}"
+      }
+    ],
+    "fingerprint": "1771407439548",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/variables/20?apiLink=variable",
+    "formatValue": {}
+  }
+]
