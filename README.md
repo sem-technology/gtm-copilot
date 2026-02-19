@@ -20,6 +20,7 @@ For general information on Agent Skills, please refer to [agentskills.io](https:
 
 To use the GTM Copilot skills, follow these steps:
 
-1. **Download**: Obtain the pre-built `gtm-copilot_vX.X.X.zip` from the [Releases](https://github.com/ryota-yamada/ai-gtm-developer/releases) page.
+1. **Download**: Obtain the pre-built `gtm-copilot_vX.X.X.zip` from the [Releases](https://github.com/sem-technology/gtm-copilot/releases) page.
 2. **Setup**: Extract the zip file and place the contents into your AI Agent's skill directory (e.g., `.agent/skills/gtm-copilot/`).
-3. **Usage**: Once placed, your AI Agent will automatically recognize the tools defined in `SKILL.md` and can start automating your GTM workflow.
+3. **Authentication**: Copy `.agent/skills/gtm-copilot/.env.example` to `.agent/skills/gtm-copilot/.env` and update your credentials.
+4. **Usage**: Once placed, your AI Agent will automatically recognize the tools defined in `SKILL.md` and can start automating your GTM workflow.
