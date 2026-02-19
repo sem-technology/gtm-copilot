@@ -4,8 +4,8 @@ import json
 import argparse
 from typing import Dict, List, Any, Optional
 
-# Add src directory to path to import gtm_client and helpers
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+# Add parent directory to path to import local modules
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 try:
     from gtm_client import GTMClient

@@ -1,0 +1,151 @@
+[
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/tags/3",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "tagId": "3",
+    "name": "GA4 - Config",
+    "type": "googtag",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "tagId",
+        "value": "{{GA4 - Measurement ID}}"
+      },
+      {
+        "type": "template",
+        "key": "configSettingsVariable",
+        "value": "{{GA4 Params}}"
+      }
+    ],
+    "fingerprint": "1771406821390",
+    "firingTriggerId": [
+      "2147479573"
+    ],
+    "tagFiringOption": "oncePerEvent",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/tags/3?apiLink=tag",
+    "monitoringMetadata": {
+      "type": "map"
+    },
+    "consentSettings": {
+      "consentStatus": "notSet"
+    }
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/tags/6",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "tagId": "6",
+    "name": "GA4 - View Item",
+    "type": "gaawe",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "sendEcommerceData",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "getEcommerceDataFrom",
+        "value": "dataLayer"
+      },
+      {
+        "type": "template",
+        "key": "eventName",
+        "value": "view_item"
+      },
+      {
+        "type": "template",
+        "key": "measurementIdOverride",
+        "value": "{{GA4 - Measurement ID}}"
+      }
+    ],
+    "fingerprint": "1771406751526",
+    "firingTriggerId": [
+      "5"
+    ],
+    "tagFiringOption": "oncePerEvent",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/tags/6?apiLink=tag",
+    "monitoringMetadata": {
+      "type": "map"
+    },
+    "consentSettings": {
+      "consentStatus": "notSet"
+    }
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/tags/12",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "tagId": "12",
+    "name": "Google Ads - Purchase",
+    "type": "awct",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "enableNewCustomerReporting",
+        "value": "false"
+      },
+      {
+        "type": "boolean",
+        "key": "enableConversionLinker",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "orderId",
+        "value": "{{Ecommerce - Transaction ID}}"
+      },
+      {
+        "type": "boolean",
+        "key": "enableProductReporting",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "conversionValue",
+        "value": "{{Ecommerce - Purchase Revenue}}"
+      },
+      {
+        "type": "boolean",
+        "key": "enableShippingData",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "conversionId",
+        "value": "1122334455"
+      },
+      {
+        "type": "template",
+        "key": "currencyCode",
+        "value": "JPY"
+      },
+      {
+        "type": "template",
+        "key": "conversionLabel",
+        "value": "abcdefg"
+      },
+      {
+        "type": "boolean",
+        "key": "rdp",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "1771407104264",
+    "firingTriggerId": [
+      "11"
+    ],
+    "tagFiringOption": "oncePerEvent",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/243949719/workspaces/2/tags/12?apiLink=tag",
+    "monitoringMetadata": {
+      "type": "map"
+    },
+    "consentSettings": {
+      "consentStatus": "notSet"
+    }
+  }
+]

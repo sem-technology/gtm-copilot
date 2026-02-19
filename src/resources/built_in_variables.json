@@ -1,0 +1,98 @@
+[
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "pageUrl",
+    "name": "Page URL"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "pageHostname",
+    "name": "Page Hostname"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "pagePath",
+    "name": "Page Path"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "referrer",
+    "name": "Referrer"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "event",
+    "name": "Event"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "clickElement",
+    "name": "Click Element"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "clickId",
+    "name": "Click ID"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "clickUrl",
+    "name": "Click URL"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "clickText",
+    "name": "Click Text"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "analyticsClientId",
+    "name": "Analytics Client ID"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "analyticsSessionId",
+    "name": "Analytics Session ID"
+  },
+  {
+    "path": "accounts/6339968929/containers/243949719/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "243949719",
+    "workspaceId": "2",
+    "type": "analyticsSessionNumber",
+    "name": "Analytics Session Number"
+  }
+]
