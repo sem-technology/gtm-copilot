@@ -4,7 +4,7 @@ description: A comprehensive skill for developing, managing, importing, and expo
 license: MIT
 compatibility: "python >= 3.x"
 metadata:
-  version: 1.0.0
+  version: 0.0.1
   author: SEM Technology
   homepage: https://github.com/sem-technology/gtm-copilot
 disable-model-invocation: false

@@ -2,11 +2,25 @@ import os
 import shutil
 import zipfile
 
+def get_version_from_skill_md(skill_md_path):
+    """
+    Extracts the version from the YAML frontmatter of SKILL.md.
+    """
+    if not os.path.exists(skill_md_path):
+        return "1.0.0"
+    
+    with open(skill_md_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip().startswith("version:"):
+                return line.split(":", 1)[1].strip()
+    return "1.0.0"
+
 def main():
     # Configuration
-    version = "1.0.0"
-    project_name = "gtm-copilot"
     project_root = os.getcwd()
+    skill_md_path = os.path.join(project_root, "src", "SKILL.md")
+    version = get_version_from_skill_md(skill_md_path)
+    project_name = "gtm-copilot"
     
     build_dir = os.path.join(project_root, "build", project_name)
     artifacts_dir = os.path.join(project_root, "artifacts")
