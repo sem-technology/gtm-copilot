@@ -53,8 +53,6 @@ def get_authorization_url(
         scopes = [
             "https://www.googleapis.com/auth/tagmanager.readonly",
             "https://www.googleapis.com/auth/tagmanager.edit.containers",
-            "https://www.googleapis.com/auth/tagmanager.edit.containerversions",
-            "https://www.googleapis.com/auth/tagmanager.delete.containers"
         ]
 
     base_url = "https://accounts.google.com/o/oauth2/v2/auth"
