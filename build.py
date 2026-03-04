@@ -7,13 +7,13 @@ def get_version_from_skill_md(skill_md_path):
     Extracts the version from the YAML frontmatter of SKILL.md.
     """
     if not os.path.exists(skill_md_path):
-        return "1.0.0"
+        return "0.0.0"
     
     with open(skill_md_path, "r", encoding="utf-8") as f:
         for line in f:
             if line.strip().startswith("version:"):
                 return line.split(":", 1)[1].strip()
-    return "1.0.0"
+    return "0.0.0"
 
 def main():
     # Configuration
