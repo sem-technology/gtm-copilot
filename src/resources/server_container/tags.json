@@ -1,0 +1,209 @@
+[
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/tags/12",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "tagId": "12",
+    "name": "GA4 - Pageview",
+    "type": "sgtmgaaw",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "redactVisitorIp",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "epToIncludeDropdown",
+        "value": "all"
+      },
+      {
+        "type": "list",
+        "key": "upToExclude",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "fieldName",
+                "value": "ip_address"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "key": "epToExclude",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "fieldName",
+                "value": "email"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "key": "userProperties",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "fieldName",
+                "value": "user_rank"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "{{Event Data - Body Params ABC}}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "template",
+        "key": "eventName",
+        "value": "page_view"
+      },
+      {
+        "type": "list",
+        "key": "eventParameters",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "fieldName",
+                "value": "container_id"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "GTM-ABCDEF"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "template",
+        "key": "upToIncludeDropdown",
+        "value": "all"
+      },
+      {
+        "type": "template",
+        "key": "measurementId",
+        "value": "G-123456789"
+      }
+    ],
+    "fingerprint": "1773219133815",
+    "firingTriggerId": [
+      "2147479574"
+    ],
+    "tagFiringOption": "oncePerEvent",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/tags/12?apiLink=tag",
+    "monitoringMetadata": {
+      "type": "map"
+    },
+    "consentSettings": {
+      "consentStatus": "notSet"
+    }
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/tags/13",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "tagId": "13",
+    "name": "GA4 - Send Inquiry",
+    "type": "sgtmgaaw",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "redactVisitorIp",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "epToIncludeDropdown",
+        "value": "all"
+      },
+      {
+        "type": "list",
+        "key": "epToExclude",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "fieldName",
+                "value": "email"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "template",
+        "key": "eventName",
+        "value": "generate_lead"
+      },
+      {
+        "type": "list",
+        "key": "eventParameters",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "fieldName",
+                "value": "query"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "{{Search Keyword Type}}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "template",
+        "key": "upToIncludeDropdown",
+        "value": "all"
+      },
+      {
+        "type": "template",
+        "key": "measurementId",
+        "value": "G-123456789"
+      }
+    ],
+    "fingerprint": "1773219177654",
+    "firingTriggerId": [
+      "11"
+    ],
+    "tagFiringOption": "oncePerEvent",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/tags/13?apiLink=tag",
+    "monitoringMetadata": {
+      "type": "map"
+    },
+    "consentSettings": {
+      "consentStatus": "notSet"
+    }
+  }
+]

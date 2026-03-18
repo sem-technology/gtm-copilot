@@ -1,0 +1,62 @@
+[
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/triggers/11",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "triggerId": "11",
+    "name": "Pageview - Contact Thanks",
+    "type": "customEvent",
+    "customEventFilter": [
+      {
+        "type": "equals",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "page_view"
+          }
+        ]
+      }
+    ],
+    "filter": [
+      {
+        "type": "startsWith",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{Event Data - Page Location}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "/contact/thanks.html"
+          }
+        ]
+      },
+      {
+        "type": "equals",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{Debug Mode}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "false"
+          }
+        ]
+      }
+    ],
+    "fingerprint": "1773219044029",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/triggers/11?apiLink=trigger"
+  }
+]

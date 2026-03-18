@@ -4,7 +4,7 @@ description: A comprehensive skill for developing, managing, importing, and expo
 license: MIT
 compatibility: "python >= 3.x"
 metadata:
-  version: 0.0.2
+  version: 0.0.3
   author: SEM Technology
   homepage: https://github.com/sem-technology/gtm-copilot
 disable-model-invocation: false
@@ -31,10 +31,16 @@ This skill is configured as a self-contained package. Agents must always use rel
   - `gtm_client.py`: Core implementation of the GTM API client
   - `authentication.py`: Authentication module
 - `resources/`: Folder for supplemental documents and sample data
-  - `tags.json`: Implementation sample for tags
-  - `triggers.json`: Implementation sample for triggers
-  - `variables.json`: Implementation sample for variables
-  - `built_in_variables.json`: List of built-in variables
+  - `server_container/`: Configuration for Server-side GTM
+    - `tags.json`
+    - `triggers.json`
+    - `variables.json`
+    - `built_in_variables.json`
+  - `web_container/`: Configuration for Web GTM
+    - `tags.json`
+    - `triggers.json`
+    - `variables.json`
+    - `built_in_variables.json`
 
 ## Command Details
 ### 1. auth (Authentication Setup)
@@ -57,12 +63,12 @@ Updates the GTM container based on local JSON files.
   - Automatically resolve ID references (from name-based to numeric IDs)
 
 ## Development Workflow
-1. **Export**: Run `export.py` to get the latest GTM state.
+1. **Export**: Run `scripts/bin/export.py` to get the latest GTM state.
 2. **Implementation (AI Work)**: Modify the JSON files under `tmp/`.
    - Add new tags
    - Change trigger conditions
    - Fix variable definitions
-3. **Import**: Run `import.py` to synchronize changes.
+3. **Import**: Run `scripts/bin/import.py` to synchronize changes.
    - After sync, official IDs and `fingerprint` values are written back to local JSONs.
 
 ## Notes on JSON File Generation & Editing
@@ -74,4 +80,5 @@ Updates the GTM container based on local JSON files.
 - **Change Detection**:
   - The script compares content hashes and skips API calls if there are no actual changes.
 - **Implementation References**:
-  - Use the JSON files in the `resources/` directory (e.g., `tags.json`) as references for correct schemas and parameter structures.
+  - Use the JSON files in the `resources/server_container/` or `resources/web_container/` directories as references for correct schemas and parameter structures.
+  - **Important**: Available tags, triggers, and variables differ significantly between Server and Web containers. Ensure you reference the correct directory for your specific container type when implementing new components.

@@ -1,0 +1,230 @@
+[
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/variables/3",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "variableId": "3",
+    "name": "Cookie Value",
+    "type": "sgtmk",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "decodeCookie",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "name",
+        "value": "_ga"
+      }
+    ],
+    "fingerprint": "1773218640397",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/variables/3?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/variables/4",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "variableId": "4",
+    "name": "Query Params - Search",
+    "type": "qp",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "queryParamName",
+        "value": "search"
+      }
+    ],
+    "fingerprint": "1773218670331",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/variables/4?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/variables/5",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "variableId": "5",
+    "name": "Request Header - Content-Type",
+    "type": "rh",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "headerName",
+        "value": "Content-Type"
+      }
+    ],
+    "fingerprint": "1773218725926",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/variables/5?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/variables/6",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "variableId": "6",
+    "name": "Event Data - Body Params ABC",
+    "type": "ed",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "keyPath",
+        "value": "body.params.abc"
+      }
+    ],
+    "fingerprint": "1773218783103",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/variables/6?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/variables/7",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "variableId": "7",
+    "name": "User Location - Request Header",
+    "type": "vr",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "resolutionOptions",
+        "value": "requestHeaders"
+      }
+    ],
+    "fingerprint": "1773218809082",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/variables/7?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/variables/8",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "variableId": "8",
+    "name": "Constants - GA4 Measure ID",
+    "type": "c",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "value",
+        "value": "G-ABCDEF123"
+      }
+    ],
+    "fingerprint": "1773218833830",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/variables/8?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/variables/9",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "variableId": "9",
+    "name": "Search Keyword Type",
+    "type": "remm",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "input",
+        "value": "{{Query Params - Search}}"
+      },
+      {
+        "type": "boolean",
+        "key": "fullMatch",
+        "value": "true"
+      },
+      {
+        "type": "boolean",
+        "key": "replaceAfterMatch",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "defaultValue",
+        "value": "general"
+      },
+      {
+        "type": "boolean",
+        "key": "ignoreCase",
+        "value": "true"
+      },
+      {
+        "type": "list",
+        "key": "map",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "key",
+                "value": ".*gtm-copilot.*"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "branded"
+              }
+            ]
+          },
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "key",
+                "value": ".*tagmanager.*"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "tool_name"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fingerprint": "1773218940482",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/variables/9?apiLink=variable",
+    "formatValue": {}
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/variables/10",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "variableId": "10",
+    "name": "Event Data - Page Location",
+    "type": "ed",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "keyPath",
+        "value": "page_location"
+      }
+    ],
+    "fingerprint": "1773219002507",
+    "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6339968929/containers/245942733/workspaces/2/variables/10?apiLink=variable",
+    "formatValue": {}
+  }
+]
