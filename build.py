@@ -70,6 +70,13 @@ def main():
             shutil.copy2(license_src, build_dir)
             print(f"  - Copied LICENSE.txt to root")
 
+    # 2. Copy README files from project root
+    for readme in ["README.md", "README_ja.md", "AGENT.md"]:
+        readme_src = os.path.join(project_root, readme)
+        if os.path.exists(readme_src):
+            shutil.copy2(readme_src, build_dir)
+            print(f"  - Copied {readme} to root")
+
     # 5. Process SKILL.md in build_dir
     dest_file = os.path.join(build_dir, "SKILL.md")
     if os.path.exists(dest_file):
