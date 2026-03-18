@@ -6,17 +6,21 @@ def load_env_file(filepath: str = None) -> None:
     If no filepath is provided, it tries to find .env at the project root.
     """
     if filepath is None:
-        # Auto-detect .env at project root (2 levels up from helpers/ directory)
+        # Search for .env starting from current directory up to root
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        potential_env = os.path.abspath(os.path.join(current_dir, "..", "..", ".env"))
-        if os.path.exists(potential_env):
-            filepath = potential_env
-        else:
-            # Fallback to CWD
-            filepath = ".env"
+        while True:
+            potential_env = os.path.join(current_dir, ".env")
+            if os.path.exists(potential_env):
+                filepath = potential_env
+                break
+            
+            parent_dir = os.path.dirname(current_dir)
+            if parent_dir == current_dir:  # Reached root
+                raise FileNotFoundError(".env file not found in current or any parent directories.")
+            current_dir = parent_dir
 
     if not os.path.exists(filepath):
-        return
+        raise FileNotFoundError(f".env file not found at: {filepath}")
         
     with open(filepath, "r") as f:
         for line in f:
