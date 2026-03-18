@@ -1,0 +1,82 @@
+[
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "eventName",
+    "name": "Event Name"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "containerVersion",
+    "name": "Container Version"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "debugMode",
+    "name": "Debug Mode"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "randomNumber",
+    "name": "Random Number"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "containerId",
+    "name": "Container ID"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "requestPath",
+    "name": "Request Path"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "requestMethod",
+    "name": "Request Method"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "clientName",
+    "name": "Client Name"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "queryString",
+    "name": "Query String"
+  },
+  {
+    "path": "accounts/6339968929/containers/245942733/workspaces/2/built_in_variables",
+    "accountId": "6339968929",
+    "containerId": "245942733",
+    "workspaceId": "2",
+    "type": "visitorRegion",
+    "name": "Visitor Region"
+  }
+]
