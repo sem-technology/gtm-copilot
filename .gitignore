@@ -3,6 +3,7 @@ artifacts
 
 # Environment variables
 .env
+.gemini
 
 # Python
 __pycache__/
