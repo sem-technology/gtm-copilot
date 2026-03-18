@@ -35,42 +35,40 @@ def main():
     os.makedirs(build_dir, exist_ok=True)
 
     # 1. Copy src contents to build_dir
-    src_src = os.path.join(project_root, "src")
-    scripts_dest = os.path.join(build_dir, "scripts")
+    src_dir = os.path.join(project_root, "src")
     
-    if os.path.exists(src_src):
-        for item in os.listdir(src_src):
-            s = os.path.join(src_src, item)
+    if os.path.exists(src_dir):
+        # Copy scripts directory
+        scripts_src = os.path.join(src_dir, "scripts")
+        if os.path.exists(scripts_src):
+            shutil.copytree(scripts_src, os.path.join(build_dir, "scripts"), 
+                            ignore=shutil.ignore_patterns('__pycache__', '*.pyc', '*.pyo'))
+            print(f"  - Copied scripts to {os.path.join(build_dir, 'scripts')} (excluding __pycache__)")
             
-            # Logic files and folders go into 'scripts/'
-            if item in ["bin", "helpers"] or item.endswith(".py"):
-                d = os.path.join(scripts_dest, item)
-                os.makedirs(scripts_dest, exist_ok=True)
-                if os.path.isdir(s):
-                    shutil.copytree(s, d)
-                else:
-                    shutil.copy2(s, d)
-            # SKILL.md and resources folder stay at build_dir root
-            elif item == "SKILL.md":
-                d = os.path.join(build_dir, item)
-                shutil.copy2(s, d)
-            elif item == "resources" and os.path.isdir(s):
-                d = os.path.join(build_dir, item)
-                shutil.copytree(s, d)
-                
-        print(f"  - Reorganized source logic into {scripts_dest} and resources to {build_dir}")
+        # Copy resources directory
+        resources_src = os.path.join(src_dir, "resources")
+        if os.path.exists(resources_src):
+            shutil.copytree(resources_src, os.path.join(build_dir, "resources"),
+                            ignore=shutil.ignore_patterns('__pycache__', '*.pyc', '*.pyo'))
+            print(f"  - Copied resources to {os.path.join(build_dir, 'resources')}")
+            
+        # Copy SKILL.md
+        skill_src = os.path.join(src_dir, "SKILL.md")
+        if os.path.exists(skill_src):
+            shutil.copy2(skill_src, build_dir)
+            print(f"  - Copied SKILL.md to root")
 
-    # 3. Copy .env.example to root
-    env_src = os.path.join(project_root, ".env.example")
-    if os.path.exists(env_src):
-        shutil.copy2(env_src, build_dir)
-        print(f"  - Copied .env.example to root")
+        # Copy .env.example (now inside src/)
+        env_src = os.path.join(src_dir, ".env.example")
+        if os.path.exists(env_src):
+            shutil.copy2(env_src, build_dir)
+            print(f"  - Copied .env.example to root")
 
-    # 4. Copy LICENSE.txt to root
-    license_src = os.path.join(project_root, "LICENSE.txt")
-    if os.path.exists(license_src):
-        shutil.copy2(license_src, build_dir)
-        print(f"  - Copied LICENSE.txt to root")
+        # Copy LICENSE.txt (now inside src/)
+        license_src = os.path.join(src_dir, "LICENSE.txt")
+        if os.path.exists(license_src):
+            shutil.copy2(license_src, build_dir)
+            print(f"  - Copied LICENSE.txt to root")
 
     # 5. Process SKILL.md in build_dir
     dest_file = os.path.join(build_dir, "SKILL.md")
@@ -78,9 +76,11 @@ def main():
         with open(dest_file, "r", encoding="utf-8") as f:
             content = f.read()
         
-        # Update paths from ./bin/ to ./scripts/bin/
-        final_content = content.replace("./bin/", "./scripts/bin/")
-        final_content = final_content.replace("./helpers/", "./scripts/helpers/")
+        # Update paths from src/ to scripts/
+        final_content = content.replace("src/bin/", "scripts/bin/")
+        final_content = final_content.replace("src/helpers/", "scripts/helpers/")
+        # Also handle any cases where gtm_client.py or authentication.py are referenced directly if needed
+        # (Though SKILL.md mostly lists them in the directory structure section)
         
         with open(dest_file, "w", encoding="utf-8") as f:
             f.write(final_content)
