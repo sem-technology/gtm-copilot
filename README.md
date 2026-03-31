@@ -14,13 +14,36 @@ To ensure portability and ease of setup, this project is implemented using **onl
 
 - **Programming Language**: Python 3.x (Standard Library only)
 
-## Agent Skills Setup
+## Setup (Agent Skills)
 
-For general information on Agent Skills, please refer to [agentskills.io](https://agentskills.io/home).
+To use GTM Copilot as an AI Agent skill, follow these steps:
 
-To use the GTM Copilot skills, follow these steps:
+1. **Download**: Clone this repository into your agent's skill directory.
 
-1. **Download**: Obtain the pre-built `gtm-copilot_vX.X.X.zip` from the [Releases](https://github.com/sem-technology/gtm-copilot/releases) page.
-2. **Setup**: Extract the zip file and place the contents into your AI Agent's skill directory (e.g., `.agent/skills/gtm-copilot/`).
-3. **Authentication**: Copy `.env.example` to `.env` in the skill directory and update your credentials.
-4. **Usage**: Once placed, your AI Agent will automatically recognize the tools defined in `SKILL.md` and can start automating your GTM workflow.
+   **For Claude Code:**
+   ```sh
+   # User-level
+   git clone https://github.com/sem-technology/gtm-copilot.git ~/.claude/skills/gtm-copilot
+   # Project-level
+   git clone https://github.com/sem-technology/gtm-copilot.git .claude/skills/gtm-copilot
+   ```
+
+   **For Gemini (including Antigravity):**
+   ```sh
+   # User-level
+   git clone https://github.com/sem-technology/gtm-copilot.git ~/.agent/skills/gtm-copilot
+   # Project-level
+   git clone https://github.com/sem-technology/gtm-copilot.git .agent/skills/gtm-copilot
+   ```
+
+2. **Authentication**: 
+   - Copy `.env.example` to `.env` in the skill directory.
+   - Run the authentication script to generate your refresh token:
+     ```sh
+     python scripts/bin/auth.py
+     ```
+   - Follow the prompts to authorize and update the values in your `.env` file.
+
+3. **Usage**: Once placed and authenticated, your AI Agent will automatically recognize the tools defined in `SKILL.md` and can start automating your GTM workflow.
+
+For more information on Agent Skills, please refer to [agentskills.io](https://agentskills.io/home).
