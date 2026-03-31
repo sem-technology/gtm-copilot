@@ -14,13 +14,46 @@
 
 - **プログラミング言語**: Python 3.x（標準ライブラリのみ）
 
-## Agent Skills のセットアップ
+## セットアップ (Agent Skills)
 
-Agent Skills の全般的な情報については [agentskills.io](https://agentskills.io/home) を参照してください。
+GTM CopilotをAIエージェントのスキルとして使用するには、以下の手順を実行してください：
 
-GTM Copilot のスキルを使用するには、以下の手順を実行してください：
+1. **ダウンロード**: このリポジトリをエージェントのスキルディレクトリにクローンします。
 
-1. **ダウンロード**: [Releases](https://github.com/sem-technology/gtm-copilot/releases) ページからビルド済みの `gtm-copilot_vX.X.X.zip` を取得します。
-2. **配置**: Zip ファイルを解凍し、中身を AI エージェントのスキルディレクトリ（例: `.agent/skills/gtm-copilot/`）に配置します。
-3. **認証**: スキルディレクトリ内の `.env.example` をコピーして `.env` を作成し、認証情報を更新します。
-3. **利用**: 配置が完了すると、AI エージェントは `SKILL.md` に定義されたツールを自動的に認識し、GTM の自動化作業を開始できるようになります。
+   **Claude Codeの場合:**
+   ```sh
+   # ユーザーレベル（全プロジェクトで有効）
+   git clone https://github.com/sem-technology/gtm-copilot.git ~/.claude/skills/gtm-copilot
+   # プロジェクトレベル（特定のプロジェクトのみで有効）
+   git clone https://github.com/sem-technology/gtm-copilot.git .claude/skills/gtm-copilot
+   ```
+
+   **Gemini（Antigravity等）の場合:**
+   ```sh
+   # ユーザーレベル（全プロジェクトで有効）
+   git clone https://github.com/sem-technology/gtm-copilot.git ~/.agent/skills/gtm-copilot
+   # プロジェクトレベル（特定のプロジェクトのみで有効）
+   git clone https://github.com/sem-technology/gtm-copilot.git .agent/skills/gtm-copilot
+   ```
+
+2. **認証**: 
+   - スキルディレクトリ内の `.env.example` をコピーして `.env` を作成します。
+   - 認証トークンを生成するために以下のスクリプトを実行します：
+     ```sh
+     python scripts/bin/auth.py
+     ```
+   - 表示される手順に従って認証を行い、取得した値を `.env` ファイルに設定します。
+
+3. **利用**: 配置と認証が完了すると、AIエージェントは `SKILL.md` に定義されたツールを自動的に認識し、GTMの自動化作業を開始できるようになります。
+
+## アップデート
+
+スキルを最新バージョンに更新するには、スキルディレクトリに移動して以下を実行してください：
+
+```sh
+# ユーザーレベル（例）
+cd ~/.agent/skills/gtm-copilot
+git pull origin main
+```
+
+Agent Skillsの全般的な情報については [agentskills.io](https://agentskills.io/home) を参照してください。
