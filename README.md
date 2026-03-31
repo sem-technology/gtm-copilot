@@ -46,4 +46,14 @@ To use GTM Copilot as an AI Agent skill, follow these steps:
 
 3. **Usage**: Once placed and authenticated, your AI Agent will automatically recognize the tools defined in `SKILL.md` and can start automating your GTM workflow.
 
+## Updating
+
+To update the skill to the latest version, navigate to the skill directory and run:
+
+```sh
+# User-level (example)
+cd ~/.agent/skills/gtm-copilot
+git pull origin main
+```
+
 For more information on Agent Skills, please refer to [agentskills.io](https://agentskills.io/home).
