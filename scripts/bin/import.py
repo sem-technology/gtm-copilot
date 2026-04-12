@@ -10,7 +10,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 try:
     from gtm_client import GTMClient
     from helpers.env_loader import load_env_file
-    from helpers.gtm_utils import parse_gtm_workspace_url
+    from helpers.gtm_utils import parse_gtm_workspace_url, resolve_gtm_path
 except ImportError as e:
     print(f"Error: Could not import necessary modules: {e}")
     sys.exit(1)
@@ -194,8 +194,7 @@ def main():
         container_info = client.get_container(container_path)
         public_id = container_info.get("publicId", f"GTM-{container_id}")
         
-        if not directory:
-            directory = os.path.join("tmp", public_id)
+        directory = resolve_gtm_path(directory, public_id)
 
         print(f"Starting import to workspace: {workspace_path}")
         print(f"Input directory: {directory}")
