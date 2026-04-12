@@ -42,6 +42,15 @@ This skill is configured as a self-contained package. Agents must always use rel
     - `variables.json`
     - `built_in_variables.json`
 
+## Configuration
+Environment variables are loaded from the `.env` file located in the project root.
+- `GTM_CLIENT_ID`: OAuth 2.0 Client ID for GTM API access.
+- `GTM_CLIENT_SECRET`: OAuth 2.0 Client Secret for GTM API access.
+- `GTM_REFRESH_TOKEN`: OAuth 2.0 Refresh Token for automatic token renewal.
+- `GTM_EXPORT_ROOT_PATH`: Environment variable to specify the root directory for GTM files.
+  - **Placeholder**: Supports `[[GTM_ID]]` for dynamic path resolution based on the container ID.
+  - **Resolution Priority**: CLI Argument > Env Var > Default (`tmp/[[GTM_ID]]`).
+
 ## Command Details
 ### 1. auth (Authentication Setup)
 Performs OAuth2 authentication to access the GTM API.
@@ -51,12 +60,13 @@ Performs OAuth2 authentication to access the GTM API.
 ### 2. export (State Extraction)
 Exports existing GTM configurations as local JSON files.
 - **Execution**: `python ./scripts/bin/export.py --url <GTM_WORKSPACE_URL>`
-- **Output**: `./tmp/GTM-XXXXXX/`
+- **Output**: The path defined by `--output` or `GTM_EXPORT_ROOT_PATH` (defaults to `./tmp/GTM-XXXXXX/`).
 - **Role**: Save the current state of tags, triggers, and variables as a snapshot for editing.
 
 ### 3. import (Change Synchronization)
 Updates the GTM container based on local JSON files.
 - **Execution**: `python ./scripts/bin/import.py --url <GTM_WORKSPACE_URL>`
+- **Input**: The path defined by `--directory` or `GTM_EXPORT_ROOT_PATH` (defaults to `./tmp/GTM-XXXXXX/`).
 - **Role**: 
   - Create new components
   - Update existing components (only if changes detected)
