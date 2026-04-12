@@ -4,7 +4,7 @@ description: A comprehensive skill for developing, managing, importing, and expo
 license: MIT
 compatibility: "python >= 3.x"
 metadata:
-  version: 0.0.4
+  version: 0.1.0
   author: SEM Technology
   homepage: https://github.com/sem-technology/gtm-copilot
 disable-model-invocation: false
@@ -27,10 +27,12 @@ This skill is configured as a self-contained package. Agents must always use rel
 - `LICENSE.txt`: License information
 - `scripts/`: Folder containing all program code
   - `bin/`: Executable scripts (auth.py, export.py, import.py)
-  - `helpers/`: Utilities and client logic
   - `gtm_client.py`: Core implementation of the GTM API client
   - `authentication.py`: Authentication module
+  - `helpers/`: Utilities and client logic
 - `resources/`: Folder for supplemental documents and sample data
+  - `documents/`: Documents for GTM Copilot
+    - `audit_checkpoints.md`: Detailed audit criteria for GTM configurations
   - `server_container/`: Configuration for Server-side GTM
     - `tags.json`
     - `triggers.json`
@@ -72,7 +74,8 @@ Updates the GTM container based on local JSON files.
   - Update existing components (only if changes detected)
   - Automatically resolve ID references (from name-based to numeric IDs)
 
-## Development Workflow
+## Workflow
+### Development Workflow
 1. **Export**: Run `scripts/bin/export.py` to get the latest GTM state.
 2. **Implementation (AI Work)**: Modify the JSON files under `tmp/`.
    - Add new tags
@@ -80,6 +83,15 @@ Updates the GTM container based on local JSON files.
    - Fix variable definitions
 3. **Import**: Run `scripts/bin/import.py` to synchronize changes.
    - After sync, official IDs and `fingerprint` values are written back to local JSONs.
+
+### Audit Workflow
+1. **Export**: Run `scripts/bin/export.py` to get the latest GTM state.
+2. **Audit**: 
+   - The agent uses the `view_file` tool to read `resources/documents/audit_checkpoints.md` to understand the audit criteria.
+   - The agent then analyzes the exported JSON files in `tmp/` based on those criteria.
+3. **Report**: The agent provides a summary of findings (issues, risks, and recommendations) to the user.
+
+**Crucial**: The agent must not modify any tags, triggers, or variables, nor perform any import operations, unless specifically instructed to do so by the user.
 
 ## Notes on JSON File Generation & Editing
 - **Name-based References (Recommended)**: 
